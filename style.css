@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Arsenal|Dosis|Indie+Flower|Lato|Open+Sans|Overpass|PT+Sans|Raleway|Roboto');
+
+#wrapper{
+  width: 80%;
+  margin: 2em auto;
+}
+
+h1 {
+  font-family: "Lato";
+  font-size: 1.8em;
+}
+
+h2 {
+  font-family: "Lato";
+}
+
+section {
+}
+
+article {
+  background: green;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
