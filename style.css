@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Arsenal|Dosis|Indie+Flower|Lato|Open+Sans|Overpass|PT+Sans|Raleway|Roboto');
 
+body{
+  background: rgb(164, 240, 201)
+}
+
 #wrapper{
-  width: 80%;
+  width: 40em;
   margin: 2em auto;
 }
 
@@ -18,11 +22,60 @@ section {
 }
 
 article {
-  background: green;
+  background: rgb(25, 235, 83);
+  position: relative;
+  height: 11em;
+  border-radius: 10px;
+  margin-bottom: 2em;
 }
 
-img {
+#status {
+
+    font-family: "Lato";
+    text-align: right;
+    position: relative;
+    bottom: 1em;
+
+}
+
+#logo {
   height: 100px;
   width: 100px;
   border-radius: 10px;
+}
+
+#preview{
+  position: relative;
+  height: 8em;;
+  left: 13em;
+  bottom: 12em;
+  border-radius: 10px;
+
+}
+
+#viewers {
+  position: relative;
+  bottom: 17em;
+  left: 32em;
+  font-family: "Lato";
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#disbanded {
+    font-family: "lato";
+    text-align: center;
+    position: relative;
+    top:   2em;
+    font-size: 2em;
+}
+
+#offline {
+  font-family: "lato";
+  position: relative;
+  font-size: 2em;
+  text-align: center;
+  bottom: 3.5em;
 }
