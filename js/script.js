@@ -11,28 +11,20 @@ window.onload = function() {
       if(allArticles[i].className==="offline" ||allArticles[i].className!=="online"){
       allArticles[i].style.display="block";}
       else{allArticles[i].style.display="none"}
-    console.log(online);
 }
   }
 
   function onlineTwo(){
-
-    console.log(offline);
-    console.log("a");
     for(var i = 0; i<allArticles.length; i++){
       if(allArticles[i].className!=="online"){
       allArticles[i].style.display="none";}
-
-
   else{allArticles[i].style.display="block"}
 }
 }
   function allTwo() {
-    console.log(allArticles)
       for (var i = 0; i<allArticles.length; i++){
           allArticles[i].style.display="block";
       }
-      console.log(allArticles);
   }
 
   offlineButton.addEventListener("click", offline);
@@ -45,7 +37,6 @@ window.onload = function() {
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
 
-
             var json = JSON.parse(this.responseText);
 
             if(json.stream===null){
@@ -55,7 +46,6 @@ window.onload = function() {
                     if(this.readyState == 4 && this.status == 200) {
                       var jsonTwo = JSON.parse(xhrTwo.responseText);
                       //Blocked Channel
-                      console.log(jsonTwo)
                       if(jsonTwo.mature!==false){
                         var article = document.createElement("article");
 
@@ -66,24 +56,8 @@ window.onload = function() {
                         article.style.background="white";
                         section.appendChild(article);
 
-
-
-
                       }
-                      else if (this.status==404 & this.error==="Not Found"){
-/*
-                        var article = document.createElement("article");
 
-                        var status = document.createElement("p");
-                        status.innerText = json.message;
-                        status.id = "disbanded";
-                        article.appendChild(status);
-                        article.style.background="white";
-                        section.appendChild(article);
-
-*/
-console.log("a");
-                      }
                       else {
                         //offline channel
                         //username
@@ -113,15 +87,8 @@ console.log("a");
                         article.appendChild(anchorLink);
                         article.className="offline";
 
-
-
-
                       }
-
-
                     }
-
-
                 }
 
                 xhrTwo.open("GET", "https://wind-bow.gomix.me/twitch-api/channels" + "/" + j[i], false);
@@ -154,13 +121,11 @@ console.log("a");
             anchorLink.appendChild(status);
             status.id = "status";
             article.appendChild(anchorLink);
-            console.log(status);
             //Preview Image
             var previewImage = json.stream.preview.medium;
             var preview = document.createElement("img");
             preview.src=previewImage;
             preview.id = "preview";
-            console.log(previewImage);
             article.appendChild(preview);
             //Viewers
             var viewersApi = document.createTextNode(json.stream.viewers+" viewers");
@@ -181,11 +146,6 @@ console.log("a");
     xhr.send();
 
   }
-
-
-
-
-
 
 
 }
