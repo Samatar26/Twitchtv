@@ -1,5 +1,44 @@
 window.onload = function() {
 
+  var online = document.getElementById("online");
+  var offlineButton = document.getElementById("offlineButton");
+  var allArticles = document.getElementsByTagName("article");
+  var all = document.getElementById("all");
+
+  function offline() {
+
+    for(var i = 0; i<allArticles.length; i++){
+      if(allArticles[i].className==="offline" ||allArticles[i].className!=="online"){
+      allArticles[i].style.display="block";}
+      else{allArticles[i].style.display="none"}
+    console.log(online);
+}
+  }
+
+  function onlineTwo(){
+
+    console.log(offline);
+    console.log("a");
+    for(var i = 0; i<allArticles.length; i++){
+      if(allArticles[i].className!=="online"){
+      allArticles[i].style.display="none";}
+
+
+  else{allArticles[i].style.display="block"}
+}
+}
+  function allTwo() {
+    console.log(allArticles)
+      for (var i = 0; i<allArticles.length; i++){
+          allArticles[i].style.display="block";
+      }
+      console.log(allArticles);
+  }
+
+  offlineButton.addEventListener("click", offline);
+  online.addEventListener("click", onlineTwo);
+  all.addEventListener("click", allTwo);
+
     var xhr = new XMLHttpRequest();
     var section = document.getElementById("container");
 
@@ -72,6 +111,7 @@ console.log("a");
                         anchorLink.appendChild(status);
                         status.id = "offline";
                         article.appendChild(anchorLink);
+                        article.className="offline";
 
 
 
@@ -128,6 +168,7 @@ console.log("a");
             viewers.appendChild(viewersApi);
             viewers.id = "viewers";
             article.appendChild(viewers);
+            article.className="online";
           }
 
 

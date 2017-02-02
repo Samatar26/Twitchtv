@@ -19,6 +19,7 @@ h2 {
 }
 
 section {
+  margin-top: -1em;
 }
 
 article {
@@ -78,4 +79,7 @@ a {
   font-size: 2em;
   text-align: center;
   bottom: 3.5em;
+}
+button {
+  border-radius: px;
 }
