@@ -3,38 +3,50 @@ window.onload = function() {
     var xhr = new XMLHttpRequest();
     var section = document.getElementById("container");
 
-
-
-
-
-
-
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
 
 
             var json = JSON.parse(this.responseText);
+
             if(json.stream===null){
                 var xhrTwo = new XMLHttpRequest();
                 xhrTwo.onreadystatechange = function(){
 
                     if(this.readyState == 4 && this.status == 200) {
                       var jsonTwo = JSON.parse(xhrTwo.responseText);
-                      //check user exists - null
+                      //Blocked Channel
                       console.log(jsonTwo)
-                      if(jsonTwo.mature===null){
+                      if(jsonTwo.mature!==false){
                         var article = document.createElement("article");
+
                         var status = document.createElement("p");
-                        status.innerText = "Account " + jsonTwo.display_name +  " does not exist";
+                        status.innerText = "Account " + j[i] +  " is disabled";
                         status.id = "disbanded";
                         article.appendChild(status);
+                        article.style.background="white";
                         section.appendChild(article);
 
 
 
 
                       }
+                      else if (this.status==404 & this.error==="Not Found"){
+/*
+                        var article = document.createElement("article");
+
+                        var status = document.createElement("p");
+                        status.innerText = json.message;
+                        status.id = "disbanded";
+                        article.appendChild(status);
+                        article.style.background="white";
+                        section.appendChild(article);
+
+*/
+console.log("a");
+                      }
                       else {
+                        //offline channel
                         //username
 
                         var usernameText = document.createTextNode(jsonTwo.display_name);
@@ -44,6 +56,7 @@ window.onload = function() {
                         var article = document.createElement("article");
                         article.appendChild(username);
                         article.id = "esl";
+                        article.style.backgroundColor="white";
                         section.appendChild(article);
                         //logo
                         var logo = document.createElement("img");
@@ -121,8 +134,8 @@ window.onload = function() {
 
           }
     }
-    for (var i = 0; i<4; i++){
-    var j = ["esl_sc2", "OgamingSC2", "freecodecamp", "ssssssssssssss"];
+    for (var i = 0; i<5; i++){
+    var j = ["esl_sc2", "OgamingSC2", "freecodecamp", "comster404", "brunofin"];
     xhr.open("GET", "https://wind-bow.gomix.me/twitch-api/streams/"+j[i], false);
     xhr.send();
 
